@@ -35,7 +35,7 @@ pipeline {
         stage('Terraform Validate'){
             steps {
                 dir('app-ec2/'){
-                    sh "make validate"
+                    sh "terraform validate"
                 }
             }
         }
@@ -49,7 +49,7 @@ pipeline {
                         } catch (err) {
                             sh "terraform workspace select ${params.WORKSPACE}"
                         }
-                        sh "terraform plan -var 'access_key=$ACCESS_KEY' -var 'secret_key=$SECRET_KEY' \
+                        sh "terraform plan \
                         -out terraform.tfplan;echo \$? > status"
                         stash name: "terraform-plan", includes: "terraform.tfplan"
                     }
