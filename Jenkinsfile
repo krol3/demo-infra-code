@@ -17,7 +17,7 @@ pipeline {
             stage('Terraform Init'){
             steps {
                 dir('app-ec2/'){
-                    sh "terraform init -input=false"
+                    sh "terraform init -input=false -backend-config=${AWS_ACCESS_KEY_ID} -backend-config=${AWS_SECRET_ACCESS_KEY}"
                     sh "echo \$PWD"
                     sh "whoami"
                 }
