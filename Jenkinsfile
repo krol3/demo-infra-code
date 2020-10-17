@@ -10,14 +10,14 @@ pipeline {
         TF_HOME = tool('terraform-0.13.4')
         TF_IN_AUTOMATION = "true"
         PATH = "$TF_HOME:$PATH"
-        ACCESS_KEY = credentials('AWS_ACCESS_KEY_ID')
-        SECRET_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+        AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
     }
     stages {
             stage('Terraform Init'){
             steps {
                 dir('app-ec2/'){
-                    sh "terraform init -input=false -backend-config=${AWS_ACCESS_KEY_ID} -backend-config=${AWS_SECRET_ACCESS_KEY}"
+                    sh "terraform init -input=false"
                     sh "echo \$PWD"
                     sh "whoami"
                 }
