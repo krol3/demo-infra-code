@@ -1,5 +1,5 @@
 init:
-	terraform init
+	terraform init -input=false
 
 plan:
 	terraform plan -var-file=dev.tfvars -out plan.tfplan

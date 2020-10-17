@@ -17,7 +17,7 @@ pipeline {
             stage('Terraform Init'){
             steps {
                 dir('app-ec2/'){
-                    sh "make init -input=false"
+                    sh "terraform init -input=false"
                     sh "echo \$PWD"
                     sh "whoami"
                 }
@@ -27,7 +27,7 @@ pipeline {
         stage('Terraform Format'){
             steps {
                 dir('app-ec2/'){
-                    sh "make format"
+                    sh "terraform fmt -list=true -write=false -diff=true -check=true"
                 }
             }
         }
