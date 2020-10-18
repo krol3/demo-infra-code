@@ -49,7 +49,7 @@ pipeline {
                         } catch (err) {
                             sh "terraform workspace select ${params.WORKSPACE}"
                         }
-                        sh "terraform plan \
+                        sh "terraform plan -input=false -var-file=dev.tfvars \
                         -out terraform.tfplan;echo \$? > status"
                         stash name: "terraform-plan", includes: "terraform.tfplan"
                     }
