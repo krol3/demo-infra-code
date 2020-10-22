@@ -12,6 +12,6 @@ Using module [terraform-aws-modules/ec2-instance/aws](https://github.com/terrafo
 
 ## Resources
 
-https://www.terraform-best-practices.com/naming
-https://github.com/ozbillwang/terraform-best-practices
-https://medium.com/@devopslearning/100-days-of-devops-day-34-terraform-pipeline-using-jenkins-a3d81975730f
+- https://www.terraform-best-practices.com/naming
+- https://github.com/ozbillwang/terraform-best-practices
+- https://medium.com/@devopslearning/100-days-of-devops-day-34-terraform-pipeline-using-jenkins-a3d81975730f
