@@ -16,6 +16,12 @@ jobs:
       uses: hashicorp/setup-terraform@v1
       with:
         terraform_version: 0.13.5
+    - name: Super-Linter
+      uses: github/super-linter@v3.13.5
+      env:
+        VALIDATE_ALL_CODEBASE: false
+        DEFAULT_BRANCH: main
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Terraform Format
       id: fmt
       run: terraform fmt -check
