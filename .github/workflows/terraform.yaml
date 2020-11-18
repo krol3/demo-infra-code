@@ -1,4 +1,4 @@
-name: 'Terraform'
+name: 'Lint Code Base'
 on:
   push:
     branches:
