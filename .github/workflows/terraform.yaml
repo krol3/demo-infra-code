@@ -1,4 +1,4 @@
-name: 'Terraform'
+name: 'Lint Code Base'
 on:
   push:
     branches:
@@ -16,11 +16,14 @@ jobs:
       uses: hashicorp/setup-terraform@v1
       with:
         terraform_version: 0.13.5
-    - name: Super-Linter
+    - name: Lint Code Base
       uses: github/super-linter@v3.13.5
       env:
-        VALIDATE_ALL_CODEBASE: false
+        VALIDATE_ALL_CODEBASE: true
         DEFAULT_BRANCH: main
+        VALIDATE_MD: true
+        VALIDATE_TERRAFORM: true
+        VALIDATE_TERRAFORM_TERRASCAN: true
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Terraform Format
       id: fmt
