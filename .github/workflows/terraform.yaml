@@ -22,6 +22,8 @@ jobs:
         VALIDATE_ALL_CODEBASE: true
         DEFAULT_BRANCH: main
         VALIDATE_MD: true
+        VALIDATE_TERRAFORM: true
+        VALIDATE_TERRAFORM_TERRASCAN: true
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Terraform Format
       id: fmt
