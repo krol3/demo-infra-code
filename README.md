@@ -1,4 +1,4 @@
-# pipeline-infra
+# Infra as a Code
 
 [![Lint Code Base](https://github.com/krol3/pipeline-infra/workflows/Lint%20Code%20Base/badge.svg?branch=main)](https://github.com/marketplace/actions/super-linter)
 
