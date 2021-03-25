@@ -8,10 +8,10 @@ module "s3_bucket" {
   source = "terraform-aws-modules/s3-bucket/aws"
 
   bucket = var.instanceName
-  acl    = "private"
+  acl    = "public-read"
 
   versioning = {
-    enabled = true
+    enabled = false
   }
 
 }
