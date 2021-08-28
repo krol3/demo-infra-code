@@ -19,7 +19,7 @@ jobs:
 
       - name: Terraform Init
         id: init
-        run: terraform init
+        run: cd app-ec2 && terraform init
 
       - name: Run Trivy vulnerability scanner in IaC mode
         uses: aquasecurity/trivy-action@master
