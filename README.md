@@ -1,16 +1,14 @@
 # Infra as a Code
 
-[![Lint Code Base](https://github.com/krol3/pipeline-infra/workflows/Lint%20Code%20Base/badge.svg?branch=main)](https://github.com/marketplace/actions/super-linter)
-
 ## Terraform
 
-- Create the remote state
+- Create a ec2 instance using the module [terraform-aws-modules/ec2-instance/aws](https://github.com/terraform-aws-modules/terraform-aws-ec2-instance)
 
-Using module [terraform-aws-modules/ec2-instance/aws](https://github.com/terraform-aws-modules/terraform-aws-ec2-instance)
-
-## Jenkins
-
-- [Terraform plugin](https://plugins.jenkins.io/terraform/)
+```
+cd app-ec2
+make init
+make plan
+```
 
 ## Resources
 
