@@ -1,5 +1,5 @@
 
-name: scan
+name: tfsec pr
 on:
   push:
     branches:
