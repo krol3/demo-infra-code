@@ -15,3 +15,6 @@ format:
 
 apply:
 	terraform apply plan.tfplan
+
+scan:
+	tfsec .
